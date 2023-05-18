@@ -1,0 +1,33 @@
+    
+#logo1 {
+  color: #33503d;
+  font-size: x-large;
+}
+
+.logo_image {
+  width: 30px;
+  height: 30px;
+  margin: 0px -7px;
+}
+
+#logo2 {
+  color: #f70d0d;
+  font-size: x-large;
+}
+
+.bg_image {
+  min-height: 100vh;
+  background-image: url("images/main.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+li {
+  margin: 0px 30px;
+}
+
+.navbar-nav {
+  width: 90%;
+  justify-content: center;
+}
