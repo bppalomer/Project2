@@ -1,0 +1,17 @@
+
+.hero-section {
+    background-image: url("/Group 6.png");
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    mask-position: center;
+    background-repeat: repeat-y;
+    width: auto;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    
+}
