@@ -1,0 +1,38 @@
+.logo_image {
+  width: 30px;
+  height: 30px;
+  margin: 0px -5px;
+}
+
+#logo1 {
+  color: #4FC896;
+  font-size: x-large;
+}
+
+#logo2 {
+  color: #f70d0d;
+  font-size: x-large;
+}
+
+#icon {
+
+  width: 30px;
+  height: 40px;
+}
+
+footer {
+  background-color: #33503d;
+  color: #fff;
+}
+
+#btn {
+  border-radius: 50px;
+}
+
+#flu {
+  opacity: 0.2;
+}
+
+#spt {
+  opacity: 0.2;
+}
