@@ -18,9 +18,10 @@
 
   width: 30px;
   height: 40px;
+  text-decoration: none;
 }
 
-footer {
+footer, #spt, #supp, #icon {
   background-color: #33503d;
   color: #fff;
 }
@@ -34,5 +35,22 @@ footer {
 }
 
 #spt {
+  opacity: 0.2;
+}
+
+#supp{
+  text-decoration: none;
+}
+
+ul{
+  list-style-type: none;
+  margin-left: 10px;
+}
+
+.support_item{
+  margin-top: 20px;
+}
+
+#shq{
   opacity: 0.2;
 }

@@ -17,24 +17,21 @@ function Footer () {
                     <button className="container-fluid m-2" id='btn'>Subscribe</button>
                 </div>
 
-                <div className="col-md-3 text-center">
-                    <p id='spt'>Support</p>
-                    <div>
-                        <a href="#">Contact Us</a>
-                    </div>
-                    <div className='m-4'>
-                        <a href="#">FAQs</a>
-                    </div>
-                    
-                    <div className="m-4">
-                        <a href="#">Privacy Policy</a>
-                    </div>
+                <div className="col-md-3">
+                    <p id='spt' className='ms-5'>Support</p>
+                   <div>
+                    <ul>
+                        <li className='support_item'>Contact Us</li>
+                        <li className='support_item'>FAQs</li>
+                        <li className='support_item'>Privacy policy</li>
+                    </ul>
+                   </div>
                 </div>
 
 
 
 
-                <div className="col-md-3 text-center">
+                <div className="col-md-3">
                     <p id='flu'>Follow Us</p>
                     <a id="icon" className="fa-brands fa-facebook" hrer="#"></a>
                     <a id="icon" className="fa-brands fa-youtube" href="#"></a>
@@ -49,7 +46,7 @@ function Footer () {
                 </div>
 
                 <div className="col-md-2">
-                    <p className="fw-bold mt-">Still Have Question?</p>
+                    <p className="fw-bold" id='shq' >Still Have Question?</p>
                     <div>
                         <strong>Phone:</strong>
                         <div>
