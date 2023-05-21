@@ -1,6 +1,9 @@
-    
+.navbar{
+  background-color: #33503d;
+}
+
 #logo1 {
-  color: #33503d;
+  color: #ffffff;
   font-size: x-large;
 }
 
@@ -15,19 +18,15 @@
   font-size: x-large;
 }
 
-.bg_image {
-  min-height: 100vh;
-  background-image: url("images/main.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-li {
+.nav-item {
   margin: 0px 30px;
 }
 
 .navbar-nav {
   width: 90%;
   justify-content: center;
+}
+
+.nav-link {
+  color: #ffffff !important; 
 }
