@@ -1,14 +1,12 @@
-import React from 'react';
-import Navbar from './Navbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './Footer';
+import Index from './Pages/Index'
+import './Pages/Css/Style.css'
+
+
 
 function App () {
     return (
         <>
-          <Navbar />
-
-            <Footer />
+        <Index />
         </>
           
     )

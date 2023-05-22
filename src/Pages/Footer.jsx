@@ -1,8 +1,8 @@
-import './Footer.css';
 
 function Footer () {
-    return(
-        <footer>
+    return (
+        <>
+                <footer>
             <div className="row">
                 <div className="col-md-3 ms-5">
                     <a className="navbar-brand mt-2 ms-4" href="About.html">
@@ -64,7 +64,7 @@ function Footer () {
                 </div>
             </div>
         </footer>
-        
+        </>
     )
 }
 
