@@ -65,36 +65,28 @@ body {
     text-decoration: none;
   }
   
-  footer, #spt, #supp, #icon {
+  footer, #supp {
     background-color: #33503d;
     color: #fff;
+    padding:40px
   }
   
   #btn {
     border-radius: 50px;
   }
   
-  #flu {
-    opacity: 0.2;
-  }
-  
-  #spt {
-    opacity: 0.2;
-  }
-  
   #supp{
     text-decoration: none;
   }
   
-  ul{
-    list-style-type: none;
-    margin-left: 10px;
-  }
-  
   .support_item{
-    margin-top: 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #fff;
   }
   
-  #shq{
-    opacity: 0.2;
+  .icon{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
   }
