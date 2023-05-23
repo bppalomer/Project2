@@ -13,14 +13,14 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarNavDropdown">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
+        <Link to="/" className={`nav-link ${ (find.pathname === `/`) ? `fw-bold active`: ``}`}>Home</Link>
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Recipe
           </a>
           <ul className="dropdown-menu">
-            <li><Link to="/home" className={`nav-link ${ (find.pathname === `/home`) ? `fw-bold active`: ``}`}>Home</Link></li>
+            <li><a className="dropdown-item" href="#">Pork</a></li>
             <li><hr class="dropdown-divider" /></li>
             <li><a className="dropdown-item" href="#">Chicken</a></li>
             <li><hr class="dropdown-divider" /></li>
