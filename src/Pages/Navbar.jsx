@@ -20,11 +20,13 @@ const Navbar = () => {
             Recipe
           </a>
           <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="#">Pork</a></li>
+            <li><Link to="/porklists" className={`nav-link nav_link ${ (find.pathname === `/porklists`) ? `fw-bold active`: ``}`}>Pork</Link></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a className="dropdown-item" href="#">Chicken</a></li>
+            <li><Link to="/beeflists" className={`nav-link nav_link ${ (find.pathname === `/beeflists`) ? `fw-bold active`: ``}`}>Beef</Link></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a className="dropdown-item" href="#">Beef</a></li>
+            <li><Link to="/chickenlists" className={`nav-link nav_link ${ (find.pathname === `/chickenlists`) ? `fw-bold active`: ``}`}>Chicken</Link></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><Link to="/fishlists" className={`nav-link nav_link ${ (find.pathname === `/fishlists`) ? `fw-bold active`: ``}`}>Fish</Link></li>
           </ul>
         </li>
         <li className="nav-item">
