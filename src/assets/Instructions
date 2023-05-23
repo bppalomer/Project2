@@ -1,0 +1,33 @@
+This are the steps and files that you need to install before starting the project
+
+First Step:
+    Create a folder on where you want to save your code
+
+Second Step:
+    Open git bash on the folder that you created.
+
+Third Step:
+    Enter the code below
+
+    git clone https://github.com/bppalomer/Project2.git
+
+Fourth Step:
+    Enter the code below
+
+    code .
+    
+Fifth Step:
+
+    Open terminal on your VSCODE and install the following commands.
+        Note: You need to make sure that you are on the right repository before installing.
+
+        Command List:
+            1.npm install
+            2.npm i bootstrap@5.3.0-alpha3 //Bootstrap version is 5.3.0
+            3.npm install react-router-dom
+            4.npm install aos
+
+Sixth Step:
+    Run this code on your VSCode terminal for testing
+
+    npm run dev
