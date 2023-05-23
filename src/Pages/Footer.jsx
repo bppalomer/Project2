@@ -4,7 +4,6 @@ function Footer() {
       <footer>
         <div className="row">
           <div className="col-md-3 p-5">
-            <a className="navbar-brand" href="About.html">
               <p id="logo1">
                 Sp
                 <img
@@ -14,8 +13,7 @@ function Footer() {
                 />
                 ce<span id="logo2">Savvy</span>
               </p>
-            </a>
-            <p className="ms-3">
+            <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam
               iusto quae, commodi distinctio beatae, soluta nisi eligendi hic
               magnam modi, tempore nam suscipit eum provident! Debitis repellat
@@ -27,25 +25,33 @@ function Footer() {
           </div>
 
           <div className="col-md-3 p-5">
-            <p id="spt">
+            <p>
               Support
             </p>
             
-                <a className="support_item">Contact Us</a>
-                <br />
-                <a className="support_item">FAQs</a>
-                <br />
+                <p>
+                <a className="support_item pb-3">Contact Us</a>
+                </p>
+                <p>
+                <a className="support_item pb-3">FAQs</a>
+                </p>
+                <p>
                 <a className="support_item">Privacy policy</a>
+                </p>
+                
       
           </div>
 
           <div className="col-md-3 p-5">
-            <p id="flu">Follow Us</p>
-            <a className="icon fa-brands fa-facebook" hrer="#"></a>
+            <div classname="pb-3">
+            <p>Follow Us</p>
+            <a className="icon fa-brands fa-facebook ps-0" hrer="#"></a>
             <a className="icon fa-brands fa-youtube" href="#"></a>
             <a className="icon fa-brands fa-instagram" href="#"></a>
             <a className="icon fa-brands fa-github" href="#"></a>
-            <div>
+            </div>
+            
+            <div className="pt-5">
               <p className="dev fw-bold">Developers</p>
               <p>Bryan Paul Palomer</p>
               <p>Patrick Laguna</p>
@@ -55,7 +61,7 @@ function Footer() {
           </div>
 
           <div className="col-md-2 p-5">
-            <p className="fw-bold" id="shq">
+            <p className="fw-bold">
               Still Have Question?
             </p>
             <div>

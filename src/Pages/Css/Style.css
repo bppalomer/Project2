@@ -38,7 +38,11 @@ body {
     color: #ffffff !important; 
   }
 
-  /* Footer */
+  .nav_link {
+    color: #33503d !important;
+    text-align: center;
+    font-family: "Poppins", sans-serif !important
+  }
 
   /* Footer */
 
@@ -65,14 +69,14 @@ body {
     text-decoration: none;
   }
   
-  footer, #supp {
+  footer {
     background-color: #33503d;
     color: #fff;
-    padding:40px
   }
   
   #btn {
     border-radius: 50px;
+    height: 50px;
   }
   
   #supp{
