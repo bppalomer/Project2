@@ -3,7 +3,7 @@ import Layout from './Layout'
 import Home from './Home'
 import Aboutus from './Aboutus'
 import Nopage from './Nopage'
-import Porklists from "./PorkLists"
+import Porklists from './Porklists'
 import Beeflists from "./BeefLists"
 import Chickenlists from "./ChickenLists"
 import Fishlists from "./FishLists"
