@@ -4,9 +4,9 @@ const Navbar = () => {
   const find = useLocation();
   return (
     <>
-      <nav className="navbar navbar-expand-lg p-4">
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <a className="navbar-brand ms-4" href="#"><span id="logo1">Sp<img src="/Chili_logo.png" alt="" className="logo_image" />ce </span><span id="logo2">Savvy</span></a>
+          <a className="navbar-brand ms-4" href="#"><span className="logo1 fw-bold">Sp<img src="/Chili_logo.png" alt="" className="logo_image" />ce </span><span className="logo2 fw-bold">Savvy</span></a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>

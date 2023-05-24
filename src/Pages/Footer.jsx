@@ -1,17 +1,17 @@
 function Footer() {
   return (
     <>
-      <footer className="mx-auto">
-        <div className="row ms-4">
+      <footer>
+        <div className="row">
           <div className="col-md-3 p-5">
-            <p id="logo1" className="fw-bold">
+            <p className="logo1 fw-bold">
               Sp
               <img
                 src="/Chili_logo.png"
                 alt="chili_image"
                 className="logo_image"
               />
-              ce<span id="logo2" className="fw-bold">Savvy</span>
+              ce<span className="logo2 fw-bold">Savvy</span>
             </p>
             <p>
               Are you tired of the same old recipes and in need of some culinary inspiration? 
@@ -58,7 +58,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="col-md-2 p-5">
+          <div className="col-md-3 p-5">
             <p className="fw-bold">
               Still Have Question?
             </p>
