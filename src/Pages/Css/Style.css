@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
 body {
-    font-family: "Poppins", sans-serif !important;
     height: 100%;
+    background-image: url("/src/assets/bg-body.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-blend-mode: multiply;
   }
   
   /* Navbar */
@@ -44,6 +55,22 @@ body {
     font-family: "Poppins", sans-serif !important
   }
 
+  /* Home Page */
+  /* Hero-section */
+  #hero-section {
+    background-image: url("/src/assets/hero-image-2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: auto;
+    height: 70vh;
+    overflow: hidden;
+    image-rendering: crisp-edges;
+  }
+  /* Hero-section */
+  /* Home Page */
+
+
   /* Footer */
 
 .logo_image {
@@ -72,6 +99,7 @@ body {
   footer {
     background-color: #33503d;
     color: #fff;
+    font-size: 20px;
   }
   
   #btn {
@@ -90,6 +118,7 @@ body {
   }
   
   .icon{
+    font-size: 30px;
     color: #fff;
     text-decoration: none;
     padding: 10px;

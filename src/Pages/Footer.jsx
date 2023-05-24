@@ -1,23 +1,23 @@
 function Footer() {
   return (
     <>
-      <footer>
-        <div className="row">
+      <footer className="mx-auto">
+        <div className="row ms-4">
           <div className="col-md-3 p-5">
-              <p id="logo1">
-                Sp
-                <img
-                  src="/Chili_logo.png"
-                  alt="chili_image"
-                  class="logo_image"
-                />
-                ce<span id="logo2">Savvy</span>
-              </p>
+            <p id="logo1" className="fw-bold">
+              Sp
+              <img
+                src="/Chili_logo.png"
+                alt="chili_image"
+                className="logo_image"
+              />
+              ce<span id="logo2" className="fw-bold">Savvy</span>
+            </p>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam
-              iusto quae, commodi distinctio beatae, soluta nisi eligendi hic
-              magnam modi, tempore nam suscipit eum provident! Debitis repellat
-              tempore nostrum provident.
+              Are you tired of the same old recipes and in need of some culinary inspiration? 
+              Look no further! Our cutting-edge recipe generator web app is here to revolutionize
+              your cooking experience. By subscribing to our newsletter, you will gain access to 
+              a world of mouthwatering recipes and exciting kitchen tips and tricks.
             </p>
             <button className="container" id="btn">
               Subscribe
@@ -25,32 +25,30 @@ function Footer() {
           </div>
 
           <div className="col-md-3 p-5">
+            <p className="fw-bold">Support</p>
+
             <p>
-              Support
+              <a className="support_item pb-3">Contact Us</a>
             </p>
-            
-                <p>
-                <a className="support_item pb-3">Contact Us</a>
-                </p>
-                <p>
-                <a className="support_item pb-3">FAQs</a>
-                </p>
-                <p>
-                <a className="support_item">Privacy policy</a>
-                </p>
-                
-      
+            <p>
+              <a className="support_item pb-3">FAQs</a>
+            </p>
+            <p>
+              <a className="support_item">Privacy policy</a>
+            </p>
+
+
           </div>
 
           <div className="col-md-3 p-5">
-            <div classname="pb-3">
-            <p>Follow Us</p>
-            <a className="icon fa-brands fa-facebook ps-0" hrer="#"></a>
-            <a className="icon fa-brands fa-youtube" href="#"></a>
-            <a className="icon fa-brands fa-instagram" href="#"></a>
-            <a className="icon fa-brands fa-github" href="#"></a>
+            <div className="pb-3">
+              <p className="fw-bold">Follow Us</p>
+              <a className="icon fa-brands fa-facebook ps-0" href="#"></a>
+              <a className="icon fa-brands fa-youtube" href="#"></a>
+              <a className="icon fa-brands fa-instagram" href="#"></a>
+              <a className="icon fa-brands fa-github" href="#"></a>
             </div>
-            
+
             <div className="pt-5">
               <p className="dev fw-bold">Developers</p>
               <p>Bryan Paul Palomer</p>
