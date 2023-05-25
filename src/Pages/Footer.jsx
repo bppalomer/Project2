@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <>
-      <footer>
+      <footer className="container-fluid">
         <div className="row">
           <div className="col-md-3 p-5">
             <p className="logo1 fw-bold">
