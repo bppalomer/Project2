@@ -130,3 +130,29 @@ body {
     text-decoration: none;
     padding: 10px;
   }
+  
+  #text{
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .text{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 20;
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+   
+  }
+
+  form{
+    background-color: #4079549a;
+  }
+
+  
+  
