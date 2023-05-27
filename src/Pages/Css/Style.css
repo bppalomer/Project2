@@ -14,7 +14,7 @@ body {
   
   /* Navbar */
   
-  .navbar, .search_section, footer, .filter_section {
+  .navbar, footer, .filter_section {
     background-color: #33503d;
   }
   
@@ -73,6 +73,38 @@ body {
 
 
 /* Recipe Page */
+
+.search-field {
+  width: 70vw;
+  flex: 1;
+  padding: 10px 35px 10px 15px;
+  border: 2;
+  border-radius: 100px;
+  outline: none;
+}
+
+.search-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -33px;
+}
+
+.fa-magnifying-glass {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+.search_section {
+  background-image: url('/src/assets/search_background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
 
 .foodies {
   width: 20vw;
