@@ -15,22 +15,14 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link to="/" className={`nav-link ${(find.pathname === `/`) ? `fw-bold active` : ``}`}>Home</Link>
               </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Recipe
-                </a>
-                <ul className="dropdown-menu">
-                  <li><Link to="/porklists" className={`nav-link nav_link ${(find.pathname === `/porklists`) ? `fw-bold active` : ``}`}>Pork</Link></li>
-                  <li><hr className="dropdown-divider" /></li>
-                  <li><Link to="/beeflists" className={`nav-link nav_link ${(find.pathname === `/beeflists`) ? `fw-bold active` : ``}`}>Beef</Link></li>
-                  <li><hr className="dropdown-divider" /></li>
-                  <li><Link to="/chickenlists" className={`nav-link nav_link ${(find.pathname === `/chickenlists`) ? `fw-bold active` : ``}`}>Chicken</Link></li>
-                  <li><hr className="dropdown-divider" /></li>
-                  <li><Link to="/fishlists" className={`nav-link nav_link ${(find.pathname === `/fishlists`) ? `fw-bold active` : ``}`}>Fish</Link></li>
-                </ul>
+              <li className="nav-item">
+                <Link to="/recipepage" className={`nav-link ${(find.pathname === `/recipepage`) ? `fw-bold active` : ``}`}>Recipe</Link>
               </li>
               <li className="nav-item">
                 <Link to="/aboutus" className={`nav-link ${(find.pathname === `/aboutus`) ? `fw-bold active` : ``}`}>About</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/contactus" className={`nav-link ${(find.pathname === `/contactus`) ? `fw-bold active` : ``}`}>ContactUs</Link>
               </li>
 
             </ul>
