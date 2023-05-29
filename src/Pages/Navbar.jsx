@@ -4,25 +4,25 @@ const Navbar = () => {
   const find = useLocation();
   return (
     <>
-      <nav className="navbar navbar-expand-lg">
-        <div className="container-fluid">
-          <a className="navbar-brand ms-4" href="#"><span className="logo1 fw-bold">Sp<img src="/Chili_logo.png" alt="" className="logo_image" />ce </span><span className="logo2 fw-bold">Savvy</span></a>
+      <nav className="navbar navbar-expand-lg p-4 shadow-lg sticky-top">
+        <div className="container">
+          <Link className="navbar-brand ms-4" to="/"><img id="logo-img" src="/src/assets/logo-spice-savvy2.png" alt="" /></Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/" className={`nav-link ${(find.pathname === `/`) ? `fw-bold active` : ``}`}>Home</Link>
+                <Link to="/" className={`nav-link ${(find.pathname === `/`) ? `fw-bold active` : ``}`}>HOME</Link>
               </li>
               <li className="nav-item">
-                <Link to="/recipepage" className={`nav-link ${(find.pathname === `/recipepage`) ? `fw-bold active` : ``}`}>Recipe</Link>
+                <Link to="/recipepage" className={`nav-link ${(find.pathname === `/recipepage`) ? `fw-bold active` : ``}`}>RECIPE</Link>
               </li>
               <li className="nav-item">
-                <Link to="/aboutus" className={`nav-link ${(find.pathname === `/aboutus`) ? `fw-bold active` : ``}`}>About</Link>
+                <Link to="/aboutus" className={`nav-link ${(find.pathname === `/aboutus`) ? `fw-bold active` : ``}`}>ABOUT</Link>
               </li>
               <li className="nav-item">
-                <Link to="/contactus" className={`nav-link ${(find.pathname === `/contactus`) ? `fw-bold active` : ``}`}>ContactUs</Link>
+                <Link to="/contactus" className={`nav-link ${(find.pathname === `/contactus`) ? `fw-bold active` : ``}`}>CONTACT</Link>
               </li>
 
             </ul>
