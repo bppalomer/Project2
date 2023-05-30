@@ -99,7 +99,7 @@ body {
   background-image: url('/src/assets/search_background.png');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 20vw;
+  height: 15vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,6 +116,31 @@ body {
   padding: 0;
   align-items: center;
   justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #33503d;
+  padding: 8px 12px;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.pagination-item.active {
+  background-color: #33503d;
+  color: #fff;
+  border-color: #33503d;
+}
+
+.pagination-item:hover {
+  background-color: #4a765a;
 }
 
 
