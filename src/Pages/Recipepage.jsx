@@ -16,6 +16,7 @@ function RecipePage() {
   const [recipes, setRecipes] = useState([]);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -68,87 +69,134 @@ function RecipePage() {
     setCurrentPage(pageNumber);
   };
 
+  const handleViewRecipe = (recipe) => {
+    setSelectedRecipe(recipe);
+  };
+
+  const handleGoBack = () => {
+    setSelectedRecipe(null);
+  };
+
   return (
     <>
       <section className="container-fluid p-0">
-        <div className="search_section p-5 d-flex flex-column align-items-center">
-          <div className="input-group justify-content-center">
-            <form onSubmit={handleSearch}>
-              <input
-                type="search"
-                placeholder="Search recipe ..."
-                className="search-field"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              <button type="submit" className="search-button">
-                <i className="fa-solid fa-magnifying-glass"></i>
-              </button>
-            </form>
-          </div>
-        </div>
-        {currentRecipes.length > 0 && (
-          <div className="pagination p-3">
-            {Array.from({ length: totalPages }, (_, index) => index + 1).map((pageNumber) => (
-              <button
-                key={pageNumber}
-                className={`pagination-item ${pageNumber === currentPage ? "active" : ""}`}
-                onClick={() => paginate(pageNumber)}
-              >
-                {pageNumber}
-              </button>
-            ))}
+        {!selectedRecipe && (
+          <div className="search_section p-5 d-flex flex-column align-items-center">
+            <div className="input-group justify-content-center">
+              <form onSubmit={handleSearch}>
+                <input
+                  type="search"
+                  placeholder="Search recipe ..."
+                  className="search-field"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <button type="submit" className="search-button">
+                  <i className="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </form>
+            </div>
           </div>
         )}
-        {!searchQuery.trim() &&
-        !Object.values(checkboxValues).some((value) => value) ? (
-          <div className="food_items bg-warning mt-3 mb-3">
-            <p className="text-dark">
-              No recipes found. Please enter a recipe or select a category in
-              the filter option.
-            </p>
-          </div>
-        ) : error ? (
-          <div className="food_items bg-danger mt-3 mb-3">
-            <p className="text-light">{error}</p>
+        {selectedRecipe ? (
+          <div className="recipe-details p-5 m-5 rounded">
+            <div className="row">
+              <div className="recipe-image col-md-6">
+                <img
+                  src={selectedRecipe.strMealThumb}
+                  alt={selectedRecipe.strMeal}
+                />
+              </div>
+              <div className="recipe-content col-md-6">
+                <h1 className="recipe-title text-light fw-bold">
+                  {selectedRecipe.strMeal}
+                </h1>
+                <h3 className=" text-light">Ingredients:</h3>
+                <ul className="recipe-ingredients  text-light">
+                  {Object.entries(selectedRecipe)
+                    .filter(
+                      ([key, value]) => key.startsWith("strIngredient") && value
+                    )
+                    .map(([key, value]) => (
+                      <li key={key}>{value}</li>
+                    ))}
+                </ul>
+              </div>
+              <h3 className=" text-light pt-5">Instructions:</h3>
+              <ol className="recipe-instructions text-light p-5">
+          {selectedRecipe.strInstructions.split(/\d+\.\s+/).map((step, index) => (
+            step.trim() && <li key={index}>{step}</li>
+          ))}
+        </ol>
+              <button className="go-back-button" onClick={handleGoBack}>
+                Go Back
+              </button>
+            </div>
           </div>
         ) : (
-          <div className="food_items">
-            {currentRecipes.length === 0 ? (
-              <div className="food_items bg-warning mt-3 mb-3">
-                <p className="text-dark">No recipes found using the given search input.</p>
+          <>
+            
+            {!searchQuery.trim() &&
+            !Object.values(checkboxValues).some((value) => value) ? (
+              <div className="food_items bg-warning mt-3 mb-3 text-center">
+                <h2 className="text-dark">
+                  No recipes found. Please enter a recipe or select a category
+                  in the filter option.
+                </h2>
+              </div>
+            ) : error ? (
+              <div className="food_items bg-danger mt-3 mb-3">
+                <p className="text-light">{error}</p>
               </div>
             ) : (
-              currentRecipes.map((recipe) => (
-                <div className="card foodies m-3" key={recipe.idMeal}>
-                  <img
-                    className="card-img-top p-2"
-                    src={recipe.strMealThumb}
-                    alt={recipe.strMeal}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{recipe.strMeal}</h5>
-                    <a href={recipe.strSource} className="btn btn-primary">
-                      View Recipe
-                    </a>
-                  </div>
-                </div>
-              ))
+              <div className="food_items">
+                {currentRecipes.length === 0 ? (
+                  <div className="food_items bg-warning mt-3 mb-3 text-center" style={{ width: "3000px" }}>
+  <h2 className="text-dark">
+    No recipes found using the given search input.
+  </h2>
+</div>
+                ) : (
+                  currentRecipes.map((recipe) => (
+                    <div className="card foodies m-3" key={recipe.idMeal}>
+                      <img
+                        className="card-img-top p-2"
+                        src={recipe.strMealThumb}
+                        alt={recipe.strMeal}
+                      />
+                      <div className="card-body">
+                        <h5 className="card-title">{recipe.strMeal}</h5>
+                        <button
+                          className="view-recipe-button"
+                          onClick={() => handleViewRecipe(recipe)}
+                        >
+                          View Recipe
+                        </button>
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
             )}
-          </div>
-        )}
-        {currentRecipes.length > 0 && (
-          <div className="pagination p-3">
-            {Array.from({ length: totalPages }, (_, index) => index + 1).map((pageNumber) => (
-              <button
-                key={pageNumber}
-                className={`pagination-item ${pageNumber === currentPage ? "active" : ""}`}
-                onClick={() => paginate(pageNumber)}
-              >
-                {pageNumber}
-              </button>
-            ))}
-          </div>
+            {currentRecipes.length > 0 && (
+              <div className="pagination p-3 fw-bold">
+                {Array.from(
+                  { length: totalPages },
+                  (_, index) => index + 1
+                ).map((pageNumber) => (
+                  <button
+                    key={pageNumber}
+                    className={`pagination-item ${
+                      pageNumber === currentPage ? "active" : ""
+                    }`}
+                    onClick={() => paginate(pageNumber)}
+                  >
+                    {pageNumber}
+                  </button>
+                ))}
+              </div>
+            )}
+          </>
         )}
       </section>
     </>
