@@ -14,7 +14,7 @@ function Home() {
                                 Just for You!
                             </h1>
                             <h4 className="text-white">
-                                Unleash your creativity in the kitchen with 
+                                Unleash your creativity in the kitchen with
                                 <br />
                                 unique and mouthwatering recipes.
                             </h4>
