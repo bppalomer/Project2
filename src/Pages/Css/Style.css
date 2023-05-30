@@ -194,7 +194,11 @@ body {
   }
 
   #form{
-    background-color: rgba(38, 221, 120, 0.753);
+    background-color:rgba(23, 207, 23, 0.562);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
   .contact-head{
@@ -209,6 +213,6 @@ body {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
     text-align: center;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 100px;
+    margin-right: 100px;
   }
