@@ -1,45 +1,21 @@
 import React, { useState, useEffect } from "react";
 
-function Recipepage() {
+function RecipePage() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedFilters, setSelectedFilters] = useState([]);
-  const [filteredRecipes, setFilteredRecipes] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [checkboxValues, setCheckboxValues] = useState({
+    beef: false,
+    chicken: false,
+    seafood: false,
+    pork: false,
+    canadian: false,
+    british: false,
+    american: false,
+    japanese: false,
+  });
   const [recipes, setRecipes] = useState([]);
-  const [isSearching, setIsSearching] = useState(false); // New state for tracking search status
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      let response;
-      if (selectedFilters.length === 0) {
-        response = await fetch(
-          "https://www.themealdb.com/api/json/v1/1/random.php"
-        );
-      } else {
-        const query = selectedFilters
-          .map((filter) => `&${filter.category}=${filter.value}`)
-          .join("");
-        response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/filter.php?${query}`
-        );
-      }
-      const data = await response.json();
-      setRecipes(data.meals);
-      setIsLoading(false);
-    };
-
-    fetchData();
-  }, [selectedFilters]);
-
-  useEffect(() => {
-    // Filter recipes based on search query
-    const filtered = recipes.filter((recipe) =>
-      recipe.strMeal.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    setFilteredRecipes(filtered);
-  }, [recipes, searchQuery]);
+  const [error, setError] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -47,30 +23,57 @@ function Recipepage() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    setSearchQuery("");
-    setIsSearching(true);
+    setCurrentPage(1);
+    fetchRecipes(searchQuery);
   };
 
   const handleCheckboxChange = (e) => {
-    const value = e.target.value;
-    const category = e.target.getAttribute("data-category");
-    if (e.target.checked) {
-      setSelectedFilters((prevFilters) => [...prevFilters, { category, value }]);
-    } else {
-      setSelectedFilters((prevFilters) =>
-        prevFilters.filter(
-          (filter) => !(filter.category === category && filter.value === value)
-        )
+    const { name, checked } = e.target;
+    setCheckboxValues((prevValues) => ({
+      ...prevValues,
+      [name]: checked,
+    }));
+
+    setIsOpen(false);
+  };
+
+  const fetchRecipes = async (query) => {
+    try {
+      const response = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
       );
+      const data = await response.json();
+      setRecipes(data.meals || []);
+      setError(null);
+    } catch (error) {
+      setRecipes([]);
+      setError("Error occurred while fetching recipes.");
     }
+  };
+
+  useEffect(() => {
+    if (!searchQuery.trim()) {
+      setRecipes([]);
+      setError(null);
+    }
+  }, [searchQuery]);
+
+  const recipesPerPage = 10;
+  const indexOfLastRecipe = currentPage * recipesPerPage;
+  const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
+  const currentRecipes = recipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
+  const totalPages = Math.ceil(recipes.length / recipesPerPage);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
   };
 
   return (
     <>
       <section className="container-fluid p-0">
         <div className="search_section p-5 d-flex flex-column align-items-center">
-          <div className="input-group justify-content-center mt-4">
-            <form action="" method="GET" className="form" onSubmit={handleSearch}>
+          <div className="input-group justify-content-center">
+            <form onSubmit={handleSearch}>
               <input
                 type="search"
                 placeholder="Search recipe ..."
@@ -83,197 +86,73 @@ function Recipepage() {
               </button>
             </form>
           </div>
-          <div className="mt-3 mb-4">
-            <span
-              className={`arrow ${isOpen ? "rotate" : ""} text-light`}
-              onClick={toggleDropdown}
-            >
-              {isOpen ? "Filter by category ▼" : "Filter by category ▶"}
-            </span>
+        </div>
+        {currentRecipes.length > 0 && (
+          <div className="pagination p-3">
+            {Array.from({ length: totalPages }, (_, index) => index + 1).map((pageNumber) => (
+              <button
+                key={pageNumber}
+                className={`pagination-item ${pageNumber === currentPage ? "active" : ""}`}
+                onClick={() => paginate(pageNumber)}
+              >
+                {pageNumber}
+              </button>
+            ))}
           </div>
-        </div>
-        <div>
-          {isOpen && (
-            <div className="dropdown-content">
-              <div className="row mx-auto justify-content-center">
-                <div className="filter_section col-md-2 p-3 m-4 border rounded">
-                  <div>
-                    <h3 className="text-light">Meat</h3>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value="Beef"
-                      data-category="c"
-                      id="flexCheckDefault1"
-                      onChange={handleCheckboxChange}
-                    />
-                    <label
-                      className="form-check-label text-light"
-                      htmlFor="flexCheckDefault1"
-                    >
-                      Beef
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value="Chicken"
-                      data-category="c"
-                      id="flexCheckDefault2"
-                      onChange={handleCheckboxChange}
-                    />
-                    <label
-                      className="form-check-label text-light"
-                      htmlFor="flexCheckDefault2"
-                    >
-                      Chicken
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value="Seafood"
-                      data-category="c"
-                      id="flexCheckDefault3"
-                      onChange={handleCheckboxChange}
-                    />
-                    <label
-                      className="form-check-label text-light"
-                      htmlFor="flexCheckDefault3"
-                    >
-                      Seafood
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value="Pork"
-                      data-category="c"
-                      id="flexCheckDefault4"
-                      onChange={handleCheckboxChange}
-                    />
-                    <label
-                      className="form-check-label text-light"
-                      htmlFor="flexCheckDefault4"
-                    >
-                      Pork
-                    </label>
-                  </div>
-                </div>
-                <div className="filter_section col-md-2 p-3 m-4 border rounded">
-                  <div>
-                    <h3 className="text-light">Area</h3>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value="Canadian"
-                      data-category="a"
-                      id="flexCheckDefault5"
-                      onChange={handleCheckboxChange}
-                    />
-                    <label
-                      className="form-check-label text-light"
-                      htmlFor="flexCheckDefault5"
-                    >
-                      Canadian
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value="British"
-                      data-category="a"
-                      id="flexCheckDefault6"
-                      onChange={handleCheckboxChange}
-                    />
-                    <label
-                      className="form-check-label text-light"
-                      htmlFor="flexCheckDefault6"
-                    >
-                      British
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value="American"
-                      data-category="a"
-                      id="flexCheckDefault7"
-                      onChange={handleCheckboxChange}
-                    />
-                    <label
-                      className="form-check-label text-light"
-                      htmlFor="flexCheckDefault7"
-                    >
-                      American
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value="Japanese"
-                      data-category="a"
-                      id="flexCheckDefault8"
-                      onChange={handleCheckboxChange}
-                    />
-                    <label
-                      className="form-check-label text-light"
-                      htmlFor="flexCheckDefault8"
-                    >
-                      Japanese
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-        
-        {isSearching && filteredRecipes.length === 0 ? (
-          <p className="text-light">No recipes found.</p>
+        )}
+        {!searchQuery.trim() &&
+        !Object.values(checkboxValues).some((value) => value) ? (
+          <div className="food_items bg-warning mt-3 mb-3">
+            <p className="text-dark">
+              No recipes found. Please enter a recipe or select a category in
+              the filter option.
+            </p>
+          </div>
+        ) : error ? (
+          <div className="food_items bg-danger mt-3 mb-3">
+            <p className="text-light">{error}</p>
+          </div>
         ) : (
-          filteredRecipes.length > 0 && (
-            <div className="food_items">
-              {filteredRecipes.map((recipe, index) => (
-                <div key={index} className="card foodies m-3">
+          <div className="food_items">
+            {currentRecipes.length === 0 ? (
+              <div className="food_items bg-warning mt-3 mb-3">
+                <p className="text-dark">No recipes found using the given search input.</p>
+              </div>
+            ) : (
+              currentRecipes.map((recipe) => (
+                <div className="card foodies m-3" key={recipe.idMeal}>
                   <img
-                    src={recipe.strMealThumb}
                     className="card-img-top p-2"
-                    alt="..."
+                    src={recipe.strMealThumb}
+                    alt={recipe.strMeal}
                   />
                   <div className="card-body">
-                    <h5 className="card-title">
-                      {isLoading ? (
-                        <div
-                          className="spinner-border text-dark"
-                          role="status"
-                        ></div>
-                      ) : (
-                        recipe.strMeal
-                      )}
-                    </h5>
-                    <a href="#" className="btn btn-primary">
+                    <h5 className="card-title">{recipe.strMeal}</h5>
+                    <a href={recipe.strSource} className="btn btn-primary">
                       View Recipe
                     </a>
                   </div>
                 </div>
-              ))}
-            </div>
-          )
+              ))
+            )}
+          </div>
+        )}
+        {currentRecipes.length > 0 && (
+          <div className="pagination p-3">
+            {Array.from({ length: totalPages }, (_, index) => index + 1).map((pageNumber) => (
+              <button
+                key={pageNumber}
+                className={`pagination-item ${pageNumber === currentPage ? "active" : ""}`}
+                onClick={() => paginate(pageNumber)}
+              >
+                {pageNumber}
+              </button>
+            ))}
+          </div>
         )}
       </section>
     </>
   );
 }
 
-export default Recipepage;
+export default RecipePage;
