@@ -192,3 +192,23 @@ body {
     text-decoration: none;
     padding: 10px;
   }
+
+  #form{
+    background-color: rgba(38, 221, 120, 0.753);
+  }
+
+  .contact-head{
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+  .intro{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
+  }
