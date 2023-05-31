@@ -1,19 +1,11 @@
 function Footer() {
   return (
     <>
-      <footer className="container-fluid">
-        <div className="row">
-          <div className="col-md-3 p-5">
-            <p className="logo1 fw-bold">
-              Sp
-              <img
-                src="/Chili_logo.png"
-                alt="chili_image"
-                className="logo_image"
-              />
-              ce<span className="logo2 fw-bold">Savvy</span>
-            </p>
-            <p>
+      <footer className="container-fluid mx-auto">
+        <div className="row ms-4">
+          <div className="col-md-5 p-5">
+            <img className="mb-3" id="logo-img" src="/src/assets/logo-spice-savvy2.png" alt="logo" />
+            <p className="mt-2 mb-5">
               Are you tired of the same old recipes and in need of some culinary inspiration? 
               Look no further! Our cutting-edge recipe generator web app is here to revolutionize
               your cooking experience. By subscribing to our newsletter, you will gain access to 
@@ -24,7 +16,7 @@ function Footer() {
             </button>
           </div>
 
-          <div className="col-md-3 p-5">
+          <div className="col-md-2 p-5">
             <p className="fw-bold">Support</p>
 
             <p>
@@ -40,7 +32,7 @@ function Footer() {
 
           </div>
 
-          <div className="col-md-3 p-5">
+          <div className="col-md-2 p-5">
             <div className="pb-3">
               <p className="fw-bold">Follow Us</p>
               <a className="icon fa-brands fa-facebook ps-0" href="#"></a>
