@@ -8,6 +8,7 @@ function RecipePage() {
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+  
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -48,14 +49,20 @@ function RecipePage() {
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
+    // Auto scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleViewRecipe = (recipe) => {
     setSelectedRecipe(recipe);
+    // Auto scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleGoBack = () => {
     setSelectedRecipe(null);
+    // Auto scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -123,7 +130,7 @@ function RecipePage() {
                     (step, index) => step.trim() && <li key={index}>{step}</li>
                   )}
               </ol>
-              <button className="go-back-button" onClick={handleGoBack}>
+              <button className="go-back-button fw-bold" onClick={handleGoBack}>
                 Go Back
               </button>
             </div>
@@ -132,7 +139,7 @@ function RecipePage() {
           <>
             {!searchQuery.trim() &&
             !Object.values(searchQuery).some((value) => value) ? (
-              <div className="food_items bg-warning mt-3 mb-3 text-center">
+              <div className="food_items bg-warning mt-3 mb-3">
                 <h2 className="text-dark">
                   No recipes found. Please enter a recipe or select a category
                   in the filter option.
@@ -164,7 +171,7 @@ function RecipePage() {
                         alt={recipe.strMeal}
                       />
                       <div className="card-body">
-                        <h5 className="card-title text-light">{recipe.strMeal}</h5>
+                        <h5 className="card-title text-light fw-bold">{recipe.strMeal}</h5>
                         <button
                           className="view-recipe-button fw-bold"
                           onClick={() => handleViewRecipe(recipe)}
