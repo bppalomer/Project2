@@ -1,41 +1,18 @@
 import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function RecipePage() {
-  const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [checkboxValues, setCheckboxValues] = useState({
-    beef: false,
-    chicken: false,
-    seafood: false,
-    pork: false,
-    canadian: false,
-    british: false,
-    american: false,
-    japanese: false,
-  });
   const [recipes, setRecipes] = useState([]);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
   const handleSearch = (e) => {
     e.preventDefault();
     setCurrentPage(1);
     fetchRecipes(searchQuery);
-  };
-
-  const handleCheckboxChange = (e) => {
-    const { name, checked } = e.target;
-    setCheckboxValues((prevValues) => ({
-      ...prevValues,
-      [name]: checked,
-    }));
-
-    setIsOpen(false);
   };
 
   const fetchRecipes = async (query) => {
@@ -58,6 +35,10 @@ function RecipePage() {
       setError(null);
     }
   }, [searchQuery]);
+
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
 
   const recipesPerPage = 10;
   const indexOfLastRecipe = currentPage * recipesPerPage;
@@ -101,13 +82,25 @@ function RecipePage() {
         {selectedRecipe ? (
           <div className="recipe-details p-5 m-5 rounded">
             <div className="row">
-              <div className="recipe-image col-md-6">
+              <div
+                className="recipe-image col-md-6"
+                data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1000"
+              >
                 <img
                   src={selectedRecipe.strMealThumb}
                   alt={selectedRecipe.strMeal}
                 />
               </div>
-              <div className="recipe-content col-md-6">
+              <div
+                className="recipe-content col-md-6"
+                data-aos="fade-left"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1000"
+              >
                 <h1 className="recipe-title text-light fw-bold">
                   {selectedRecipe.strMeal}
                 </h1>
@@ -124,10 +117,12 @@ function RecipePage() {
               </div>
               <h3 className=" text-light pt-5">Instructions:</h3>
               <ol className="recipe-instructions text-light p-5">
-          {selectedRecipe.strInstructions.split(/\d+\.\s+/).map((step, index) => (
-            step.trim() && <li key={index}>{step}</li>
-          ))}
-        </ol>
+                {selectedRecipe.strInstructions
+                  .split(/\d+\.\s+/)
+                  .map(
+                    (step, index) => step.trim() && <li key={index}>{step}</li>
+                  )}
+              </ol>
               <button className="go-back-button" onClick={handleGoBack}>
                 Go Back
               </button>
@@ -135,9 +130,8 @@ function RecipePage() {
           </div>
         ) : (
           <>
-            
             {!searchQuery.trim() &&
-            !Object.values(checkboxValues).some((value) => value) ? (
+            !Object.values(searchQuery).some((value) => value) ? (
               <div className="food_items bg-warning mt-3 mb-3 text-center">
                 <h2 className="text-dark">
                   No recipes found. Please enter a recipe or select a category
@@ -151,23 +145,28 @@ function RecipePage() {
             ) : (
               <div className="food_items">
                 {currentRecipes.length === 0 ? (
-                  <div className="food_items bg-warning mt-3 mb-3 text-center" style={{ width: "3000px" }}>
-  <h2 className="text-dark">
-    No recipes found using the given search input.
-  </h2>
-</div>
+                  <div className="food_items bg-warning mt-3 mb-3 text-center">
+                    <h2 className="text-dark">
+                      No recipes found using the given search input.
+                    </h2>
+                  </div>
                 ) : (
-                  currentRecipes.map((recipe) => (
-                    <div className="card foodies m-3" key={recipe.idMeal}>
+                  currentRecipes.map((recipe, index) => (
+                    <div
+                      className="card bg-dark foodies m-3"
+                      key={recipe.idMeal}
+                      data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+                      data-aos-duration="1000"
+                    >
                       <img
                         className="card-img-top p-2"
                         src={recipe.strMealThumb}
                         alt={recipe.strMeal}
                       />
                       <div className="card-body">
-                        <h5 className="card-title">{recipe.strMeal}</h5>
+                        <h5 className="card-title text-light">{recipe.strMeal}</h5>
                         <button
-                          className="view-recipe-button"
+                          className="view-recipe-button fw-bold"
                           onClick={() => handleViewRecipe(recipe)}
                         >
                           View Recipe
