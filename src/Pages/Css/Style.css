@@ -326,3 +326,8 @@ body {
     margin-left: 100px;
     margin-right: 100px;
   }
+
+  .creators{
+    background-color: #000000;
+    color: #fff;
+  }
