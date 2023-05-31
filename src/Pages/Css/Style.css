@@ -326,3 +326,18 @@ body {
     margin-left: 100px;
     margin-right: 100px;
   }
+
+  #section{
+    background-color: #000000;
+    color: #fff;
+  }
+
+  #section_2{
+    background-color: #000000;
+    color: #fff;
+  }
+
+  #section_3{
+    background-color: #000000;
+    color: #fff;
+  } 
