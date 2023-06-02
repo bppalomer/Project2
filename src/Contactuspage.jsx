@@ -1,6 +1,72 @@
 
+import React, { useState, useEffect } from "react";
+import { db } from './firebase';
+import { collection, getDocs, addDoc } from 'firebase/firestore';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const Contactuspage = () => {
+
+  const [data, setData] = useState([]);
+  const [newUser, setNewUser] = useState({
+    id: 0,
+    firstname: '',
+    lastname: '',
+    email: '',
+    comments: '',
+  });
+
+  // Functions to handle input changes
+  const handleFirstName = (e) => {
+    setNewUser({ ...newUser, firstname: e.target.value });
+  };
+
+  const handleLastName = (e) => {
+    setNewUser({ ...newUser, lastname: e.target.value });
+  };
+
+  const handleEmail = (e) => {
+    setNewUser({ ...newUser, email: e.target.value });
+  };
+
+  const handleComment = (e) => {
+    setNewUser({ ...newUser, comments: e.target.value });
+  };
+
+  const addUser = async () => {
+    try {
+      const docRef = await addDoc(collection(db, "Users"), newUser);
+      console.log("Added successfully. Document ID: ", docRef.id);
+      clearFields();
+
+      setTimeout(() => {
+        clearFields();
+      }, 2000);
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
+  };
+
+  const clearFields = () => {
+    setNewUser({
+      id: 0,
+      firstname: '',
+      lastname: '',
+      email: '',
+      comments: '',
+    });
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const querySnapshot = await getDocs(collection(db, "Users"));
+      setData(querySnapshot.docs.map(doc => doc.data()));
+    };
+
+    fetchData();
+  }, []);
+
+
+
   return (
     <div className="mb-5 mt-5">
       <div>
@@ -16,24 +82,43 @@ const Contactuspage = () => {
         <div className="row">
           <div className="d-flex mb-3">
             <div className="col-sm-6">
-              <label for="firstName" class="form-label">First name</label>
-              <input type="text" class="form-control" />
+              <label for="firstName"
+                class="form-label">First name</label>
+              <input type="text"
+                onChange={handleFirstName}
+                value={newUser.firstname}
+                class="form-control" />
             </div>
             <div class="col-sm-6">
-              <label for="lastName" class="form-label">Last name</label>
-              <input type="text" class="form-control" />
+              <label for="lastName"
+                class="form-label">Last name</label>
+              <input type="text"
+                onChange={handleLastName}
+                value={newUser.lastname}
+                class="form-control" />
             </div>
           </div>
           <div className=" mb-3">
             <label className="form-label">Email address</label>
-            <input type="text" className="form-control" placeholder="name@example.com" />
+            <input type="text"
+              onChange={handleEmail}
+              value={newUser.email}
+              className="form-control"
+              placeholder="name@example.com" />
           </div>
           <div className=" mb-3">
             <label className="form-label">Comments</label>
-            <textarea className="form-control" id="text-area" rows="3"></textarea>
+            <textarea className="form-control"
+              onChange={handleComment}
+              value={newUser.comments}
+              id="text-area"
+              rows="3"></textarea>
           </div>
           <div>
-            <button type="button" class="btn btn-dark">Enter</button>
+            <button type="button"
+              class="btn btn-dark"
+              onClick={addUser}
+            >Enter</button>
           </div>
         </div>
       </div>
