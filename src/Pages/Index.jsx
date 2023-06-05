@@ -4,7 +4,7 @@ import Home from './Home'
 import Aboutus from './Aboutus'
 import Nopage from './Nopage'
 import Recipepage from "./Recipepage"
-import Contactuspage from "../Contactuspage"
+import Contactuspage from "./Contactuspage"
 
 
 

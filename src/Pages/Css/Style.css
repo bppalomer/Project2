@@ -104,7 +104,8 @@ body {
   width: 70vw;
   flex: 1;
   padding: 10px 35px 10px 15px;
-  border: none;
+  border: 10;
+  border-width: thick;
   border-radius: 100px;
   outline: none;
   background-color: #f8f9fa;
@@ -132,7 +133,7 @@ body {
   padding: 0;
   align-items: center;
   justify-content: center;
-  max-width: 100%;
+  width: 100%;
 }
 
 .card {
@@ -151,20 +152,42 @@ body {
 
 .card-body {
   padding: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .card-title {
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 10px;
+  font-weight: 500;
+  height: 60px;
+  width: 100%; /* Set a fixed width for the card title */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .view-recipe-button {
   display: block;
   padding: 10px 20px;
-  background-color: #000000;
+  background-color: #ffffff;
   border: none;
   border-radius: 4px;
-  color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+.view-recipe-button:hover {
+  padding: 10px 20px;
+  background-color: #979595;
+  border: none;
+  border-radius: 4px;
+  color: #000000;
   cursor: pointer;
 }
 
@@ -212,12 +235,14 @@ body {
 }
 
 .go-back-button {
+  display: block;
   padding: 10px 20px;
   background-color: #ffffff;
   border: none;
   border-radius: 4px;
   color: #000000;
   cursor: pointer;
+  width: 100%;
 }
 
 .go-back-button:hover {
@@ -236,9 +261,9 @@ body {
 }
 
 .pagination-item {
-  background-color: #fff;
+  background-color: #000000;
   border: 1px solid #ddd;
-  color: #616261;
+  color: #ffffff;
   padding: 8px 12px;
   margin: 0 4px;
   cursor: pointer;
@@ -246,7 +271,7 @@ body {
 }
 
 .pagination-item.active {
-  background-color: #000000;
+  background-color: #979595;
   color: #fff;
   border-color: #000000;
 }
@@ -303,31 +328,50 @@ body {
     padding: 10px;
   }
 
+  /* Contact Us */
+
   #form{
-    background-color:rgba(23, 207, 23, 0.562);
+    background-color:rgba(0, 0, 0, 0.562);
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 100px;
     padding-bottom: 100px;
   }
 
-  .contact-head{
-    font-size: 50px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    text-align: center;
+  .btn_contact_us {
+    width: 100vw;
   }
 
-  .intro{
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    text-align: center;
-    margin-left: 100px;
-    margin-right: 100px;
-  }
+  /* About Us */
 
   .creators{
     background-color: #000000;
     color: #fff;
+  }
+
+  .developers {
+    height: 300px;
+  }
+  .card_developers {
+    width: 25vw;
+    margin: auto;
+  }
+
+  .cards_area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  @media (max-width: 767px) {
+    .cards_area {
+      flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+    }
+  
+    .card_developers {
+      width: 400px; /* Set a fixed width for the cards on mobile screens */
+      margin: auto; /* Center the cards horizontally */
+      margin-bottom: 20px; /* Add some spacing between the cards */
+    }
   }
