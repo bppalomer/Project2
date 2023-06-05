@@ -1,7 +1,16 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Aboutus() {
+  useEffect (() => {
+    AOS.init();
+  },[]);
+  
+  const scrollToTop = () => {
+    window.scrollTo({top: 0, behavior: "smooth"});
+  };
+
   return (
     <section className="container p-5">
       <div className="text-center" data-aos="zoom-in">
@@ -167,6 +176,9 @@ function Aboutus() {
           </p>
         </div>
       </div>
+      <button className="scroll-up-button container-fluid" onClick={scrollToTop}>
+        Scroll to Top
+      </button>
     </section>
   );
 }
