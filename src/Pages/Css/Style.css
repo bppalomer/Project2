@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url("/src/assets/bg-body.jpg");
+    background-image: url("/bg-body.jpg");
     background-position: center;
     background-repeat: repeat;
     overflow-x: hidden;
@@ -62,19 +62,28 @@ body {
 
   /* Hero-section */
   #hero-section {
-    background-image: url("src/assets/hero-image.png");
+    background-image: url("/hero-image2.png");
     background-position: center;
     background-repeat: no-repeat;
     width: cover;
-    height: 88vh;
+    height: auto;
   }
 
   #hero-btn {
     background-color: #242424;
-    font-size: 18px;
+    font-size: 1rem;
     border-radius: 40px;
     color: #fff;
   }
+  .loader {
+    width: cover;
+    height: 100vh;
+  }
+
+  .plate-2 {
+    margin-left: -400px;
+  }
+
 
 
 /* Recipe Page */
@@ -85,7 +94,7 @@ body {
 }
 
 .search_section {
-  background-image: url('/src/assets/search_background.png');
+  background-image: url('/search_background.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 15vw;
@@ -121,10 +130,11 @@ body {
   cursor: pointer;
 }
 
-.fa-magnifying-glass {
-  width: 20px;
-  height: 20px;
+.fa-pan-frying {
+  width: 18px;
+  height: 18px;
   object-fit: cover;
+  color: black;
 }
 
 .food_items {

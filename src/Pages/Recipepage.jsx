@@ -80,7 +80,7 @@ function RecipePage() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
                 <button type="submit" className="search-button">
-                  <i className="fa-solid fa-magnifying-glass"></i>
+                <i className="fa-regular fa-pan-frying fa-bounce"></i>
                 </button>
               </form>
             </div>
