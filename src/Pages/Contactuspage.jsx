@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet";
+
 const Contactuspage = () => {
   return (
     <div className="mb-5 mt-5">
+      <Helmet>
+        <title>SpiceSavvy - Contact Us </title>
+      </Helmet>
       <div className="container col-9 rounded" id="form">
         <div className="text-center">
           <h1 className="contact-head text-light">Contact Us</h1>

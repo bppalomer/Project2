@@ -1,8 +1,13 @@
+import { Helmet } from "react-helmet";
+
 function Home() {
     return (
         <>
             {/* Hero Section */}
             <section id="hero-section" className="container-fluid p-5 shadow-lg">
+            <Helmet>
+        <title>SpiceSavvy - Home </title>
+      </Helmet>
                 <div className="container">
                     <div className="row d-flex justify-content-start align-items-center mt-5 p-5">
                         <div className="col-md-8 p-5">
