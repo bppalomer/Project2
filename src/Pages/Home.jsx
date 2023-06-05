@@ -35,7 +35,7 @@ function Home() {
                                 <br/>
                                 with unique and mouthwatering recipes.
                             </h4>
-                            <a href={<RecipePage />} id="hero-btn" className="btn ps-5 pe-5 p-4 mt-4 shadow-sm fw-semibold" 
+                            <a href={<RecipePage />} id="hero-btn" className="btn ps-5 pe-5 p-4 mt-4 shadow-lg fw-semibold" 
                                 data-aos="zoom-in" 
                                 data-aos-easing="ease-in-sine"
                                 data-aos-duration="1000">
