@@ -1,9 +1,14 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet";
 
 function Aboutus() {
   return (
+    
     <section className="container p-5">
+      <Helmet>
+        <title>SpiceSavvy - About Us </title>
+      </Helmet>
       <div className="text-center" data-aos="zoom-in">
         <h1 className="fw-bold">Meet the Developers</h1>
       </div>

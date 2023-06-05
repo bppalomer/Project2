@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet";
 
 function RecipePage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -67,6 +68,9 @@ function RecipePage() {
 
   return (
     <>
+    <Helmet>
+        <title>SpiceSavvy - Recipe</title>
+      </Helmet>
       <section className="container-fluid p-0">
         {!selectedRecipe && (
           <div className="search_section p-5 d-flex flex-column align-items-center">
