@@ -376,3 +376,27 @@ body {
       margin-bottom: 20px; /* Add some spacing between the cards */
     }
   }
+
+  /* 404 Page */
+
+  .btn404 {
+    color: #ffffff;
+			background-color: #000000;
+			font-size: 19px;
+			border: 1px solid #000000;
+			border-radius: 50px;
+			padding: 15px 50px;
+			cursor: pointer
+  }
+
+  .btn404:hover {
+    color: #000000;
+			background-color: #ffffff;
+  }
+
+  .text404 {
+    font-size: 15vw;
+  }
+  .text4042 {
+    font-size: 5vw;
+  }
