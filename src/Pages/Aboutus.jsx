@@ -1,4 +1,3 @@
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { Helmet } from "react-helmet";
 
@@ -74,7 +73,7 @@ function Aboutus() {
           </div>
         </div>
       </div>
-      <div className="cards_area m-5">
+      <div className="cards_area">
         <div
           className="card card_developers bg-dark m-3"
           data-aos="fade-right"
@@ -83,7 +82,7 @@ function Aboutus() {
           data-aos-duration="1000"
         >
           <img
-            src="/patrick.jpg"
+            src="/patrick.png"
             className="developers card-img-top p-3 rounded"
             alt="..."
           />
@@ -113,7 +112,7 @@ function Aboutus() {
           data-aos-duration="1000"
         >
           <img
-            src="#"
+            src="/marjorie.png"
             className="developers card-img-top p-3 rounded"
             alt="..."
           />
