@@ -13,6 +13,7 @@ const Contactuspage = () => {
     comments: "",
   });
   const [showScroll, setShowScroll] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleFirstName = (e) => {
     setNewUser({ ...newUser, firstname: e.target.value });
@@ -33,16 +34,18 @@ const Contactuspage = () => {
   const addUser = async () => {
     try {
       const docRef = await addDoc(collection(db, "Users"), newUser);
-      alert("Added successfully.", docRef.id);
+      console.log("Added successfully. ", docRef.id);
       clearFields();
 
+      setShowAlert(true);
       setTimeout(() => {
-        clearFields();
-      }, 2000);
+        setShowAlert(false);
+      }, 5000);
     } catch (error) {
-      console.error("Error adding document: ", error);
+      console.log("Error adding ", error);
     }
   };
+
 
   const clearFields = () => {
     setNewUser({
@@ -148,16 +151,30 @@ const Contactuspage = () => {
           </button>
         </div>
       </div>
+      {showAlert && (
+        <div className="container mt-3">
+          <div className="alert alert-success alert-dismissible fade show" role="alert">
+           Thank you for Submitting!
+            <button
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+              onClick={() => setShowAlert(false)}
+            ></button>
+          </div>
+        </div>
+      )}
       {showScroll && (
-        <div className="d-flex justify-content-center mt-5">
+        <div className="container mt-5">
           <button
-            type="button"
-            className="btn btn-outline-dark"
-            onClick={scrollToTop}
-            id="myButton"
-          >
-            ^
-          </button>
+              type="button"
+              className="btn btn-dark text-white"
+              onClick={scrollToTop}
+              id="myButton"
+            >
+              Scroll to top
+            </button>
         </div>
       )}
     </div>
