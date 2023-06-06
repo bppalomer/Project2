@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable no-unused-vars */
+import { useState, useEffect } from "react";
 import { db } from "./firebase";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import "bootstrap/dist/css/bootstrap.css";
@@ -103,7 +104,6 @@ const Contactuspage = () => {
         </div>
         <div className="row d-flex mb-3">
           <div className="col-sm-6">
-<<<<<<< HEAD
             <label for="firstName" className="form-label text-light">
               First name
             </label>
@@ -114,7 +114,6 @@ const Contactuspage = () => {
               Last name
             </label>
             <input type="text" className="form-control" />
-=======
             <label htmlFor="firstName" className="form-label text-light">
               First name
             </label>
@@ -135,7 +134,6 @@ const Contactuspage = () => {
               onChange={handleLastName}
               value={newUser.lastname}
             />
->>>>>>> main
           </div>
         </div>
         <div className=" mb-3">
@@ -159,15 +157,12 @@ const Contactuspage = () => {
           ></textarea>
         </div>
         <div className="d-flex justify-content-center">
-<<<<<<< HEAD
-          <button type="button" className="btn btn-dark btn-lg btn-block btn_contact_us mt-4 p-4">
-=======
+          
           <button
             type="button"
             className="btn btn-dark btn-lg btn-block btn_contact_us mt-4 p-4"
             onClick={addUser}
           >
->>>>>>> main
             Submit Feedback
           </button>
         </div>
