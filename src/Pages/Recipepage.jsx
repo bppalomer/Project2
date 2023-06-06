@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet";
 
 function RecipePage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -67,6 +68,9 @@ function RecipePage() {
 
   return (
     <>
+    <Helmet>
+        <title>SpiceSavvy - Recipe</title>
+      </Helmet>
       <section className="container-fluid p-0">
         {!selectedRecipe && (
           <div className="search_section p-5 d-flex flex-column align-items-center">
@@ -152,8 +156,8 @@ function RecipePage() {
             ) : (
               <div className="food_items">
                 {currentRecipes.length === 0 ? (
-                  <div className="food_items bg-warning mt-3 mb-3 text-center">
-                    <h2 className="text-dark">
+                  <div className="food_items bg-danger mt-3 mb-3 text-center">
+                    <h2 className="text-light">
                       No recipes found using the given search input.
                     </h2>
                   </div>
