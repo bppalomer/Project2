@@ -154,7 +154,7 @@ const Contactuspage = () => {
       {showAlert && (
         <div className="container mt-3">
           <div className="alert alert-success alert-dismissible fade show" role="alert">
-           Thank you for Submitting!
+           Thank you for Submitting your Feedback!
             <button
               type="button"
               className="btn-close"
