@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { db } from "./firebase";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import "bootstrap/dist/css/bootstrap.css";
+=======
+import { Helmet } from "react-helmet";
+>>>>>>> main
 
 const Contactuspage = () => {
   const [data, setData] = useState([]);
@@ -87,6 +91,9 @@ const Contactuspage = () => {
 
   return (
     <div className="mb-5 mt-5">
+      <Helmet>
+        <title>SpiceSavvy - Contact Us </title>
+      </Helmet>
       <div className="container col-9 rounded" id="form">
         <div className="text-center">
           <h1 className="contact-head text-light">Contact Us</h1>

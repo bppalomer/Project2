@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Layout from './Layout'
 import Home from './Home'
 import Aboutus from './Aboutus'
-import Nopage from './Nopage'
+import NotFound from './NotFound'
 import Recipepage from "./Recipepage"
 import Contactuspage from "./Contactuspage"
 
@@ -17,7 +17,7 @@ function Index() {
           <Route path="/recipepage" element={<Recipepage />} />
           <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/contactus" element={<Contactuspage />} />
-          <Route path="*" element={<Nopage />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
