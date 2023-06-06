@@ -6,12 +6,12 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg p-4 shadow-lg sticky-top">
         <div className="container">
-          <Link className="navbar-brand ms-4" to="/"><img id="logo-img" src="/src/assets/logo-spice-savvy2.png" alt="" /></Link>
+          <Link className="navbar-brand ms-4" to="/"><img id="logo-img" src="/logo-spice-savvy2.png" alt="" /></Link>
           <button className="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon bg-light"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav ms-5 ps-5">
               <li className="nav-item">
                 <Link to="/" className={`nav-link ${(find.pathname === `/`) ? `fw-bold active` : ``}`}>HOME </Link>
               </li>
