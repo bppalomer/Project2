@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable no-unused-vars */
+import { useState, useEffect } from "react";
 import { db } from "./firebase";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import "bootstrap/dist/css/bootstrap.css";
@@ -91,7 +92,7 @@ const Contactuspage = () => {
       <Helmet>
         <title>SpiceSavvy - Contact Us </title>
       </Helmet>
-      <div className="container col-9 rounded" id="form">
+      <div className="container rounded" id="form">
         <div className="text-center">
           <h1 className="contact-head text-light">Contact Us</h1>
           <p className="text-light">
@@ -103,6 +104,16 @@ const Contactuspage = () => {
         </div>
         <div className="row d-flex mb-3">
           <div className="col-sm-6">
+            <label for="firstName" className="form-label text-light">
+              First name
+            </label>
+            <input type="text" className="form-control" />
+          </div>
+          <div className="col-sm-6">
+            <label for="lastName" className="form-label text-light">
+              Last name
+            </label>
+            <input type="text" className="form-control" />
             <label htmlFor="firstName" className="form-label text-light">
               First name
             </label>
@@ -146,6 +157,7 @@ const Contactuspage = () => {
           ></textarea>
         </div>
         <div className="d-flex justify-content-center">
+          
           <button
             type="button"
             className="btn btn-dark btn-lg btn-block btn_contact_us mt-4 p-4"

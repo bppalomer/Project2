@@ -4,7 +4,7 @@ function Footer() {
       <footer className="container-fluid mx-auto">
         <div className="row ms-4">
           <div className="col-md-5 p-5">
-            <img className="mb-3" id="logo-img" src="/src/assets/logo-spice-savvy2.png" alt="logo" />
+            <img className="mb-3" id="logo-img" src="/logo-spice-savvy2.png" alt="logo" />
             <p className="mt-2 mb-5">
               Are you tired of the same old recipes and in need of some culinary inspiration? 
               Look no further! Our cutting-edge recipe generator web app is here to revolutionize
@@ -35,10 +35,10 @@ function Footer() {
           <div className="col-md-2 p-5">
             <div className="pb-3">
               <p className="fw-bold">Follow Us</p>
-              <a className="icon fa-brands fa-facebook ps-0" href="#"></a>
-              <a className="icon fa-brands fa-youtube" href="#"></a>
-              <a className="icon fa-brands fa-instagram" href="#"></a>
-              <a className="icon fa-brands fa-github" href="#"></a>
+              <a className="icon fa-brands fa-facebook p-2" href="#"></a>
+              <a className="icon fa-brands fa-youtube p-2" href="#"></a>
+              <a className="icon fa-brands fa-instagram p-2" href="#"></a>
+              <a className="icon fa-brands fa-github p-2" href="#"></a>
             </div>
 
             <div className="pt-5">
