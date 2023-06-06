@@ -2,6 +2,10 @@ import "aos/dist/aos.css";
 import { Helmet } from "react-helmet";
 
 function Aboutus() {
+  const scrollToTop = () => {
+    window.scrollTo({top: 0, behavior: "smooth"});
+  };
+
   return (
     
     <section className="container p-5">
@@ -82,7 +86,7 @@ function Aboutus() {
           data-aos-duration="1000"
         >
           <img
-            src="/patrick.png"
+            src="/patrick.jpg"
             className="developers card-img-top p-3 rounded"
             alt="..."
           />
@@ -171,6 +175,9 @@ function Aboutus() {
           </p>
         </div>
       </div>
+      <button className="scroll-up-button container-fluid" onClick={scrollToTop}>
+        Scroll to Top
+      </button>
     </section>
   );
 }
