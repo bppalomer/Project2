@@ -86,7 +86,7 @@ function Aboutus() {
           data-aos-duration="1000"
         >
           <img
-            src="/patrick.jpg"
+            src="/patrick.png"
             className="developers card-img-top p-3 rounded"
             alt="..."
           />
