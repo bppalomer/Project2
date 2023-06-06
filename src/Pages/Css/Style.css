@@ -235,7 +235,7 @@ iframe {
 }
 
 .search_section {
-  background-image: url('/search_background.png');
+  background-image: url('/src/assets/search_background.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 15vw;
@@ -254,6 +254,8 @@ iframe {
   width: 70vw;
   flex: 1;
   padding: 10px 35px 10px 15px;
+  border: 10;
+  border-width: thick;
   border-radius: 100px;
   outline: none;
   background-color: #f8f9fa;
@@ -270,10 +272,9 @@ iframe {
 }
 
 .fa-magnifying-glass {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   object-fit: cover;
-  color: black;
 }
 
 .food_items {
@@ -314,8 +315,7 @@ iframe {
   margin-bottom: 10px;
   font-weight: 500;
   height: 60px;
-  width: 100%;
-  /* Set a fixed width for the card title */
+  width: 100%; /* Set a fixed width for the card title */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -432,7 +432,7 @@ iframe {
 }
 
 .foodies {
-  width: 40vw;
+  width: 40vw;  
 }
 
 /* Footer */

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Helmet } from "react-helmet";
@@ -86,7 +86,7 @@ function RecipePage() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
                 <button type="submit" className="search-button">
-                  <i className="fa-regular fa-magnifying-glass"></i>
+                  <i className="fa-solid fa-magnifying-glass"></i>
                 </button>
               </form>
             </div>
