@@ -177,9 +177,6 @@ iframe {
 }
 
 
-  
-  
-
 @media (max-width: 520px) {
   #hero-section {
     flex-wrap: wrap;
@@ -455,12 +452,10 @@ iframe {
   text-decoration: none;
 }
 
-<<<<<<< HEAD
 footer {
   color: #fff;
   font-size: 15px;
 }
-=======
   #myButton{
   padding: 5px 10px;
   border: none;
@@ -473,7 +468,6 @@ footer {
 
 
   /* About Us */
->>>>>>> main
 
 #btn {
   border-radius: 50px;
