@@ -235,7 +235,7 @@ iframe {
 }
 
 .search_section {
-  background-image: url('/src/assets/search_background.png');
+  background-image: url('/search_background.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 15vw;
