@@ -11,7 +11,7 @@ const Navbar = () => {
             <span className="navbar-toggler-icon bg-light"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav ms-5 ps-5">
               <li className="nav-item">
                 <Link to="/" className={`nav-link ${(find.pathname === `/`) ? `fw-bold active` : ``}`}>HOME </Link>
               </li>
