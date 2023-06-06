@@ -390,11 +390,9 @@ body {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 .scroll-up-button:hover {
   background-color: #555;
 }
-=======
   .btn404 {
     color: #ffffff;
 			background-color: #000000;
@@ -416,4 +414,3 @@ body {
   .text4042 {
     font-size: 6vw;
   }
->>>>>>> Rebuilding-the-recipe-page
