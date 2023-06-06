@@ -103,17 +103,9 @@ const Contactuspage = () => {
           </p>
         </div>
         <div className="row d-flex mb-3">
+          
+          
           <div className="col-sm-6">
-            <label for="firstName" className="form-label text-light">
-              First name
-            </label>
-            <input type="text" className="form-control" />
-          </div>
-          <div className="col-sm-6">
-            <label for="lastName" className="form-label text-light">
-              Last name
-            </label>
-            <input type="text" className="form-control" />
             <label htmlFor="firstName" className="form-label text-light">
               First name
             </label>
