@@ -29,16 +29,7 @@ body {
     height: 60px;
     margin: 0px -2px;
   }
-  .logo1 {
-    color: white;
-    font-size: x-large !important;
-  }
-  
-  .logo2 {
-    color: #f70d0d;
-    font-size: x-large !important;
-  }
-  
+
   .nav-item {
     margin: 0px 30px;
   }
@@ -52,11 +43,33 @@ body {
     color: #ffffff !important; 
   }
 
-  .nav_link {
-    color: #33503d !important;
-    text-align: center;
-    font-family: "Poppins", sans-serif !important
+  .nav-link {
+    position: relative;
   }
+  
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    transition: width 1s;
+  }
+  
+  .nav-link.active::before {
+    width: 100%;
+  }
+  
+  .nav-link:hover::before {
+    width: 0%;
+  }
+  
+  .nav-link.active:hover::before {
+    width: 100%;
+  }
+  
 
   /* Home Page */
 
