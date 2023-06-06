@@ -133,6 +133,7 @@ body {
   padding: 0;
   align-items: center;
   justify-content: center;
+  text-align: center;
   width: 100%;
 }
 
@@ -374,18 +375,4 @@ body {
       margin: auto; /* Center the cards horizontally */
       margin-bottom: 20px; /* Add some spacing between the cards */
     }
-  }
-
-  /* scroll up function */
-  .scroll-up-button {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 10px;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .scroll-up-button:hover {
-    background-color: #555;
   }

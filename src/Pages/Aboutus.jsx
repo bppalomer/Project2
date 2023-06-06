@@ -1,6 +1,4 @@
-import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
 
 function Aboutus() {
   useEffect (() => {
@@ -12,7 +10,11 @@ function Aboutus() {
   };
 
   return (
+    
     <section className="container p-5">
+      <Helmet>
+        <title>SpiceSavvy - About Us </title>
+      </Helmet>
       <div className="text-center" data-aos="zoom-in">
         <h1 className="fw-bold">Meet the Developers</h1>
       </div>
@@ -78,7 +80,7 @@ function Aboutus() {
           </div>
         </div>
       </div>
-      <div className="cards_area m-5">
+      <div className="cards_area">
         <div
           className="card card_developers bg-dark m-3"
           data-aos="fade-right"
@@ -87,7 +89,7 @@ function Aboutus() {
           data-aos-duration="1000"
         >
           <img
-            src="/pic.jpg"
+            src="/patrick.jpg"
             className="developers card-img-top p-3 rounded"
             alt="..."
           />
@@ -117,7 +119,7 @@ function Aboutus() {
           data-aos-duration="1000"
         >
           <img
-            src="#"
+            src="/marjorie.png"
             className="developers card-img-top p-3 rounded"
             alt="..."
           />
