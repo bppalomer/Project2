@@ -31,7 +31,7 @@ function Home() {
                                 <br />
                                 with unique and mouthwatering recipes.
                             </h4>
-                            <button onClick={() => navigate('/recipepage')} id="hero-btn" 
+                            <button onClick={() => navigate('/recipepage')} id="hero-btn"
                             className="btn ps-5 pe-5 p-4 mt-4 mb-5 shadow-lg fw-semibold"
                                 data-aos="fade-up"
                                 data-aos-easing="ease-in-sine"
