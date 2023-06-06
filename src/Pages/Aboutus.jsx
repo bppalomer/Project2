@@ -1,10 +1,7 @@
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet";
 
 function Aboutus() {
-  useEffect (() => {
-    AOS.init();
-  },[]);
-  
   const scrollToTop = () => {
     window.scrollTo({top: 0, behavior: "smooth"});
   };
