@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 
 function Home() {
 
@@ -7,6 +8,9 @@ function Home() {
     return (
         <>
             {/* Hero Section */}
+            <Helmet>
+                <title>SpiceSavvy - Home </title>
+            </Helmet>
             <section id="hero-section" className="container-fluid p-5 shadow-lg">
                 <div id="hero-container" className="container">
                     <div className="row d-flex">
