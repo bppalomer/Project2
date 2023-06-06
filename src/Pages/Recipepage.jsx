@@ -156,8 +156,8 @@ function RecipePage() {
             ) : (
               <div className="food_items">
                 {currentRecipes.length === 0 ? (
-                  <div className="food_items bg-warning mt-3 mb-3 text-center">
-                    <h2 className="text-dark">
+                  <div className="food_items bg-danger mt-3 mb-3 text-center">
+                    <h2 className="text-light">
                       No recipes found using the given search input.
                     </h2>
                   </div>
