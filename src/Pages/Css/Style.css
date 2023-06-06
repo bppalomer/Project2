@@ -66,7 +66,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     width: cover;
-    height: auto;
+    height: 100vh;
   }
 
   #hero-btn {
@@ -75,24 +75,19 @@ body {
     border-radius: 40px;
     color: #fff;
   }
-  .loader {
-    width: 100%;
+
+  iframe{
+    width: 50%;
     height: 100vh;
   }
-
-  .plate-2 {
-    margin-left: -400px;
-  }
+    
   .plate-1 {
     display: flex;
-    justify-content: end;
-    align-items: end;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    animation-name: animate;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: linear;
+    animation: animate 3s linear 2s infinite alternate;
+    
   }
 
   @keyframes animate {
@@ -133,13 +128,11 @@ body {
   width: 70vw;
   flex: 1;
   padding: 10px 35px 10px 15px;
-  border: 10;
-  border-width: thick;
   border-radius: 100px;
   outline: none;
   background-color: #f8f9fa;
   font-size: 16px;
-  color: #555;
+  /* color: #555; */
 }
 
 .search-button {
