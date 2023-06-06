@@ -455,10 +455,25 @@ iframe {
   text-decoration: none;
 }
 
+<<<<<<< HEAD
 footer {
   color: #fff;
   font-size: 15px;
 }
+=======
+  #myButton{
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  }
+
+
+  /* About Us */
+>>>>>>> main
 
 #btn {
   border-radius: 50px;
