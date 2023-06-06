@@ -13,8 +13,10 @@ function RecipePage() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    setCurrentPage(1);
-    fetchRecipes(searchQuery);
+    if (searchQuery.trim()) {
+      setCurrentPage(1);
+      fetchRecipes(searchQuery);
+    }
   };
 
   const fetchRecipes = async (query) => {

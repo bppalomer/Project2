@@ -13,7 +13,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/" className={`nav-link ${(find.pathname === `/`) ? `fw-bold active` : ``}`}>HOME</Link>
+                <Link to="/" className={`nav-link ${(find.pathname === `/`) ? `fw-bold active` : ``}`}>HOME </Link>
               </li>
               <li className="nav-item">
                 <Link to="/recipepage" className={`nav-link ${(find.pathname === `/recipepage`) ? `fw-bold active` : ``}`}>RECIPE</Link>
