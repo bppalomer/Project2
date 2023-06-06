@@ -8,7 +8,7 @@ function Home() {
         <>
             {/* Hero Section */}
             <section id="hero-section" className="container-fluid p-5 shadow-lg">
-                <div className="container">
+                <div id="hero-container" className="container">
                     <div className="row d-flex">
                         <div className="col-md-6">
                             <img id="cooking" className="img-fluid" src="/cooking.png" alt="image"

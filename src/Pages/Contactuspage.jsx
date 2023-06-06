@@ -6,7 +6,7 @@ const Contactuspage = () => {
       <Helmet>
         <title>SpiceSavvy - Contact Us </title>
       </Helmet>
-      <div className="container col-9 rounded" id="form">
+      <div className="container rounded" id="form">
         <div className="text-center">
           <h1 className="contact-head text-light">Contact Us</h1>
           <p className="text-light">
@@ -18,16 +18,16 @@ const Contactuspage = () => {
         </div>
         <div className="row d-flex mb-3">
           <div className="col-sm-6">
-            <label for="firstName" class="form-label text-light">
+            <label for="firstName" className="form-label text-light">
               First name
             </label>
-            <input type="text" class="form-control" />
+            <input type="text" className="form-control" />
           </div>
-          <div class="col-sm-6">
-            <label for="lastName" class="form-label text-light">
+          <div className="col-sm-6">
+            <label for="lastName" className="form-label text-light">
               Last name
             </label>
-            <input type="text" class="form-control" />
+            <input type="text" className="form-control" />
           </div>
         </div>
         <div className=" mb-3">
@@ -43,7 +43,7 @@ const Contactuspage = () => {
           <textarea className="form-control" id="text-area" rows="3"></textarea>
         </div>
         <div className="d-flex justify-content-center">
-          <button type="button" class="btn btn-dark btn-lg btn-block btn_contact_us mt-4 p-4">
+          <button type="button" className="btn btn-dark btn-lg btn-block btn_contact_us mt-4 p-4">
             Submit Feedback
           </button>
         </div>
