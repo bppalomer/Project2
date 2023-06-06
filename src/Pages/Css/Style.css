@@ -7,7 +7,6 @@
 }
 
 body {
-<<<<<<< HEAD
   background-image: url("/bg-body.jpg");
   background-position: center;
   background-repeat: repeat;
@@ -149,12 +148,7 @@ iframe {
     bottom: 30px;
   }
 }
-=======
-    background-image: url("/src/assets/bg-body.jpg");
-    background-position: center;
-    background-repeat: repeat;
-    overflow-x: hidden;
-  }
+
   
   /* Navbar */
   
@@ -213,7 +207,6 @@ iframe {
     width: 100%;
   }
   
->>>>>>> main
 
 @media (max-width: 520px) {
   #hero-section {
