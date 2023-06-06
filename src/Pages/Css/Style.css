@@ -376,3 +376,20 @@ body {
       margin-bottom: 20px; /* Add some spacing between the cards */
     }
   }
+
+/* scroll up button */
+.scroll-up-button {
+  
+  bottom: 20px;
+  right: 20px;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.scroll-up-button:hover {
+  background-color: #555;
+}
