@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { db } from "./firebase";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import "bootstrap/dist/css/bootstrap.css";
-=======
 import { Helmet } from "react-helmet";
->>>>>>> main
 
 const Contactuspage = () => {
   const [data, setData] = useState([]);
