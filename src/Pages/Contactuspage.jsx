@@ -114,6 +114,7 @@ const Contactuspage = () => {
               className="form-control"
               onChange={handleFirstName}
               value={newUser.firstname}
+              required
             />
           </div>
           <div className="col-sm-6">
@@ -125,6 +126,7 @@ const Contactuspage = () => {
               className="form-control"
               onChange={handleLastName}
               value={newUser.lastname}
+              required
             />
           </div>
         </div>
@@ -136,6 +138,7 @@ const Contactuspage = () => {
             placeholder="name@example.com"
             onChange={handleEmail}
             value={newUser.email}
+            required
           />
         </div>
         <div className=" mb-3">
@@ -146,6 +149,7 @@ const Contactuspage = () => {
             rows="3"
             onChange={handleComment}
             value={newUser.comments}
+            required
           ></textarea>
         </div>
         <div className="d-flex justify-content-center">

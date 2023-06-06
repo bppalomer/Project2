@@ -33,16 +33,6 @@ footer,
   margin: 0px -2px;
 }
 
-.logo1 {
-  color: white;
-  font-size: x-large !important;
-}
-
-.logo2 {
-  color: #f70d0d;
-  font-size: x-large !important;
-}
-
 .nav-item {
   margin: 0px 30px;
 }
@@ -466,6 +456,10 @@ footer {
   justify-content: center;
   }
 
+  .link1 {
+    text-decoration: none;
+    color: white;
+  }
 
   /* About Us */
 

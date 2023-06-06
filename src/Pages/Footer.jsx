@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
     <>
@@ -20,7 +22,7 @@ function Footer() {
             <p className="fw-bold">Support</p>
 
             <p>
-              <a className="support_item pb-3">Contact Us</a>
+              <Link className="link1" to="/contactus">Contact Us</Link>
             </p>
             <p>
               <a className="support_item pb-3">FAQs</a>
