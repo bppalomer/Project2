@@ -356,6 +356,17 @@ body {
     width: 100vw;
   }
 
+  #myButton{
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  }
+
+
   /* About Us */
 
   .creators{

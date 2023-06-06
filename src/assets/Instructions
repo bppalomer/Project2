@@ -27,6 +27,7 @@ Fifth Step:
             3.npm install react-router-dom
             4.npm install aos
             5.npm install helmet
+            6.npm install firebase
 
 Sixth Step:
     Run this code on your VSCode terminal for testing
