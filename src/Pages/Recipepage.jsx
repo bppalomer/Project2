@@ -9,6 +9,7 @@ function RecipePage() {
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const [loading, setLoading] = useState(false);
   
 
   const handleSearch = (e) => {
@@ -21,6 +22,11 @@ function RecipePage() {
 
   const fetchRecipes = async (query) => {
     try {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+      }, 4000);
+
       const response = await fetch(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
       );
@@ -68,9 +74,10 @@ function RecipePage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>SpiceSavvy - Recipe</title>
       </Helmet>
       <section className="container-fluid p-0">
@@ -157,7 +164,12 @@ function RecipePage() {
               </div>
             ) : (
               <div className="food_items">
-                {currentRecipes.length === 0 ? (
+                {loading ? (
+                  <div className="text-center m-5 p-5">
+                    <iframe className="iframe2" src="https://embed.lottiefiles.com/animation/35648"></iframe>
+                    <h3>Searching for recipe ...</h3>
+                  </div>
+                ) : currentRecipes.length === 0 ? (
                   <div className="food_items bg-danger mt-3 mb-3 text-center">
                     <h2 className="text-light">
                       No recipes found using the given search input.
@@ -177,7 +189,9 @@ function RecipePage() {
                         alt={recipe.strMeal}
                       />
                       <div className="card-body">
-                        <h5 className="card-title text-light fw-bold">{recipe.strMeal}</h5>
+                        <h5 className="card-title text-light fw-bold">
+                          {recipe.strMeal}
+                        </h5>
                         <button
                           className="view-recipe-button fw-bold"
                           onClick={() => handleViewRecipe(recipe)}
@@ -190,7 +204,7 @@ function RecipePage() {
                 )}
               </div>
             )}
-            {currentRecipes.length > 0 && (
+            {currentRecipes.length > 0 && !loading && (
               <div className="pagination p-3 fw-bold">
                 {Array.from(
                   { length: totalPages },

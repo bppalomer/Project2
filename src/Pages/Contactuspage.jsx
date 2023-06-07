@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable no-unused-vars */
+import { useState, useEffect } from "react";
 import { db } from "./firebase";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import "bootstrap/dist/css/bootstrap.css";
@@ -102,7 +103,7 @@ const Contactuspage = () => {
       <Helmet>
         <title>SpiceSavvy - Contact Us </title>
       </Helmet>
-      <div className="container col-9 rounded" id="form">
+      <div className="container rounded" id="form">
         <div className="text-center">
           <h1 className="contact-head text-light">Contact Us</h1>
           <p className="text-light">
@@ -113,6 +114,8 @@ const Contactuspage = () => {
           </p>
         </div>
         <div className="row d-flex mb-3">
+          
+          
           <div className="col-sm-6">
             <label htmlFor="firstName" className="form-label text-light">
               First name
@@ -122,6 +125,7 @@ const Contactuspage = () => {
               className="form-control"
               onChange={handleFirstName}
               value={newUser.firstname}
+              required
             />
           </div>
           <div className="col-sm-6">
@@ -133,6 +137,7 @@ const Contactuspage = () => {
               className="form-control"
               onChange={handleLastName}
               value={newUser.lastname}
+              required
             />
           </div>
         </div>
@@ -144,6 +149,7 @@ const Contactuspage = () => {
             placeholder="name@example.com"
             onChange={handleEmail}
             value={newUser.email}
+            required
           />
         </div>
         <div className=" mb-3">
@@ -154,9 +160,11 @@ const Contactuspage = () => {
             rows="3"
             onChange={handleComment}
             value={newUser.comments}
+            required
           ></textarea>
         </div>
         <div className="d-flex justify-content-center">
+          
           <button
             type="button"
             className="btn btn-dark btn-lg btn-block btn_contact_us mt-4 p-4"
