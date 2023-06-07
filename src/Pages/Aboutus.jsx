@@ -29,7 +29,7 @@ function Aboutus() {
             alt="..."
           />
           <div className="card-body">
-            <p className="card-text text-light fw-bold">Bryan Paul Palomer</p>
+            <p className="card-text text-light fw-bold">Bryan Palomer</p>
             <p className="card-text text-light fw-bold">
               Full Stack Web Developer
             </p>
