@@ -33,12 +33,23 @@ const Contactuspage = () => {
     setNewUser({ ...newUser, comments: e.target.value });
   };
 
-  const addUser = async () => {
+  const addUser = async (e) => {
+    e.preventDefault(); 
+  
+    if (
+      newUser.firstname === "" ||
+      newUser.lastname === "" ||
+      newUser.email === "" ||
+      newUser.comments === ""
+    ) {
+      return; 
+    }
+  
     try {
       const docRef = await addDoc(collection(db, "Users"), newUser);
       console.log("Added successfully. ", docRef.id);
       clearFields();
-
+  
       setShowAlert(true);
       setTimeout(() => {
         setShowAlert(false);
@@ -47,7 +58,7 @@ const Contactuspage = () => {
       console.log("Error adding ", error);
     }
   };
-
+  
 
   const clearFields = () => {
     setNewUser({
