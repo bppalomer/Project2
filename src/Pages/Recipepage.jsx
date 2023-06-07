@@ -10,7 +10,7 @@ function RecipePage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [iframeLoaded, setIframeLoaded] = useState(false);
+  
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ function RecipePage() {
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
-      }, 3000);
+      }, 4000);
 
       const response = await fetch(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
@@ -74,10 +74,7 @@ function RecipePage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleIframeLoad = () => {
-    setIframeLoaded(true);
-  };
-
+  
   return (
     <>
       <Helmet>
@@ -169,7 +166,7 @@ function RecipePage() {
               <div className="food_items">
                 {loading ? (
                   <div className="text-center m-5 p-5">
-                    <iframe src="https://embed.lottiefiles.com/animation/45730"></iframe>
+                    <iframe className="iframe2" src="https://embed.lottiefiles.com/animation/35648"></iframe>
                     <h3>Searching for recipe ...</h3>
                   </div>
                 ) : currentRecipes.length === 0 ? (
