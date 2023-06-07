@@ -29,18 +29,18 @@ function Aboutus() {
             alt="..."
           />
           <div className="card-body">
-            <p className="card-text text-light fw-bold">Bryan Paul Palomer</p>
+            <p className="card-text text-light fw-bold">Bryan Palomer</p>
             <p className="card-text text-light fw-bold">
               Full Stack Web Developer
             </p>
             <div className="links">
               <a
                 href="https://github.com/bppalomer"
-                class="btn btn-light m-3 fw-bold"
+                className="btn btn-light m-3 fw-bold"
               >
                 GitHub
               </a>
-              <a href="https://linkedin.com/in/iamraiofficial" class="btn btn-light m-3 fw-bold">
+              <a href="https://linkedin.com/in/iamraiofficial" className="btn btn-light m-3 fw-bold">
                 LinkedIn
               </a>
             </div>
@@ -66,11 +66,11 @@ function Aboutus() {
             <div className="links">
               <a
                 href="https://github.com/xEliezer"
-                class="btn btn-light m-3 fw-bold"
+                className="btn btn-light m-3 fw-bold"
               >
                 GitHub
               </a>
-              <a href="#" class="btn btn-light m-3 fw-bold">
+              <a href="#" className="btn btn-light m-3 fw-bold">
                 LinkedIn
               </a>
             </div>
@@ -98,11 +98,11 @@ function Aboutus() {
             <div className="links">
               <a
                 href="https://github.com/dalepatrick"
-                class="btn btn-light m-3 fw-bold"
+                className="btn btn-light m-3 fw-bold"
               >
                 GitHub
               </a>
-              <a href="#" class="btn btn-light m-3 fw-bold">
+              <a href="#" className="btn btn-light m-3 fw-bold">
                 LinkedIn
               </a>
             </div>
@@ -128,11 +128,11 @@ function Aboutus() {
             <div className="links">
               <a
                 href="https://github.com/Marjmainit"
-                class="btn btn-light m-3 fw-bold"
+                className="btn btn-light m-3 fw-bold"
               >
                 GitHub
               </a>
-              <a href="#" class="btn btn-light m-3 fw-bold">
+              <a href="#" className="btn btn-light m-3 fw-bold">
                 LinkedIn
               </a>
             </div>
@@ -161,7 +161,7 @@ function Aboutus() {
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-          <h1 className="text-light p-3">Vision</h1>
+          <h1 className="text-light ps-0 p-3">Vision</h1>
           <p className="text-light">
             Our vision is to be the go-to destination for food lovers seeking
             culinary inspiration and knowledge. We envision Spice Savvy as a
@@ -175,9 +175,11 @@ function Aboutus() {
           </p>
         </div>
       </div>
-      <button className="scroll-up-button container-fluid" onClick={scrollToTop}>
-        Scroll to Top
-      </button>
+      <div className="container text-center">
+        <button className="scroll-up-button" onClick={scrollToTop}>
+          Scroll to Top
+        </button>
+      </div>
     </section>
   );
 }

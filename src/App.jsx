@@ -25,7 +25,7 @@ function App() {
     return (
         <>
             {loading ? (
-                <div className='text-center'><iframe src="https://embed.lottiefiles.com/animation/45730"></iframe></div>
+                <div className='text-center'><iframe className="iframe1" src="https://embed.lottiefiles.com/animation/45730"></iframe></div>
             ) : <Index />}
         </>
 
