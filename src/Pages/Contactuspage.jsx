@@ -15,7 +15,7 @@ const Contactuspage = () => {
     email: "",
     comments: "",
   });
- 
+
   const [showAlert, setShowAlert] = useState(false);
 
   const handleFirstName = (e) => {
@@ -35,22 +35,22 @@ const Contactuspage = () => {
   };
 
   const addUser = async (e) => {
-    e.preventDefault(); 
-  
+    e.preventDefault();
+
     if (
       newUser.firstname === "" ||
       newUser.lastname === "" ||
       newUser.email === "" ||
       newUser.comments === ""
     ) {
-      return; 
+      return;
     }
-  
+
     try {
       const docRef = await addDoc(collection(db, "Users"), newUser);
       console.log("Added successfully. ", docRef.id);
       clearFields();
-  
+
       setShowAlert(true);
       setTimeout(() => {
         setShowAlert(false);
@@ -85,12 +85,12 @@ const Contactuspage = () => {
       <Helmet>
         <title>SpiceSavvy - Contact Us </title>
       </Helmet>
-      <div className="container rounded shadow-lg ps-0" id="form">
+      <div className="container rounded shadow-lg" id="form">
         <div className="row">
           <div className="col-md-6 d-flex justify-content-center align-items-center">
             <img className="img-fluid img-contact" src="/contact-pic.jpg" alt="picture" />
           </div>
-            <div className="col-md-6">
+          <div className="col-md-6 p-3">
             <div className="text-start">
               <h1 className="contact-head text-dark">Contact Us</h1>
               <p className="text-dark">
@@ -158,25 +158,28 @@ const Contactuspage = () => {
                 Submit Feedback
               </button>
             </div>
+            {showAlert && (
+              <div className="container mt-3">
+                <div className="row">
+                  <div className="alert alert-success alert-dismissible fade show" role="alert">
+                    Thank you for Submitting your Feedback!
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="alert"
+                      aria-label="Close"
+                      onClick={() => setShowAlert(false)}
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
-            </div>
         </div>
-        
-      {showAlert && (
-        <div className="container mt-3">
-          <div className="alert alert-success alert-dismissible fade show" role="alert">
-           Thank you for Submitting your Feedback!
-            <button
-              type="button"
-              className="btn-close"
-              data-bs-dismiss="alert"
-              aria-label="Close"
-              onClick={() => setShowAlert(false)}
-            ></button>
-          </div>
-        </div>
-      )}
-      
+      </div>
+
+
+
     </div>
   );
 };

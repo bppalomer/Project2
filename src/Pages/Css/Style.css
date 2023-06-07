@@ -427,9 +427,13 @@ footer,
 
 .foodies {
   width: 500px;
-  
-  border: 1px solid #ced4da;
   background-color: #5ECC9F;
+}
+
+@media (max-width: 520px) {
+    .foodies {
+      width: 300px;
+    }
 }
 
 
