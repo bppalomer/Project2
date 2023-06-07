@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Helmet } from "react-helmet";
@@ -50,7 +50,7 @@ function RecipePage() {
     AOS.init({ once: true });
   }, []);
 
-  const recipesPerPage = 10;
+  const recipesPerPage = 12;
   const indexOfLastRecipe = currentPage * recipesPerPage;
   const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
   const currentRecipes = recipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
@@ -121,18 +121,21 @@ function RecipePage() {
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="1000"
               >
-                <h1 className="recipe-title text-light fw-bold">
+                <h1 className="recipe-title text-light fw-bold display-4">
                   {selectedRecipe.strMeal}
                 </h1>
                 <h3 className=" text-light">Ingredients:</h3>
-                <ul className="recipe-ingredients  text-light">
+                <ul className="recipe-ingredients text-light">
                   {Object.entries(selectedRecipe)
                     .filter(
-                      ([key, value]) => key.startsWith("strIngredient") && value
+                      ([key, value]) => (key.startsWith("strIngredient")) && value
                     )
-                    .map(([key, value]) => (
-                      <li key={key}>{value}</li>
-                    ))}
+                    .map(([key, value]) => {
+                      const ingredientIndex = key.replace("strIngredient", "");
+                      const measureKey = `strMeasure${ingredientIndex}`;
+                      const measureValue = selectedRecipe[measureKey];
+                      return <li key={key}>{`${value} ${measureValue}`}</li>;
+                    })}
                 </ul>
               </div>
               <h3 className=" text-light pt-5">Instructions:</h3>
@@ -178,22 +181,23 @@ function RecipePage() {
                 ) : (
                   currentRecipes.map((recipe, index) => (
                     <div
-                      className="card bg-dark foodies m-3"
+                      className="card bg-light foodies m-3 shadow-lg border rounded"
                       key={recipe.idMeal}
-                      data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+                      data-aos={index % 2 === 0 ? "fade-right" : "fade-right"}
                       data-aos-duration="1000"
+                      data-aos-easing="ease-in-sine"
                     >
                       <img
-                        className="card-img-top p-2"
+                        className="card-img-top img-fluid"
                         src={recipe.strMealThumb}
                         alt={recipe.strMeal}
                       />
-                      <div className="card-body">
-                        <h5 className="card-title text-light fw-bold">
+                      <div className="card-body foodies">
+                        <h5 className="card-title text-dark fw-bold">
                           {recipe.strMeal}
                         </h5>
                         <button
-                          className="view-recipe-button fw-bold"
+                          className="view-recipe-button fw-bold text-light"
                           onClick={() => handleViewRecipe(recipe)}
                         >
                           View Recipe
