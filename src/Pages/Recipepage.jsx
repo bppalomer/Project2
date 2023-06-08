@@ -193,7 +193,7 @@ function RecipePage() {
                         alt={recipe.strMeal}
                       />
                       <div className="card-body foodies">
-                        <h5 className="card-title text-dark fw-bold">
+                        <h5 className="card-title text-dark text-center fw-bold">
                           {recipe.strMeal}
                         </h5>
                         <button
